@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatalogWitcher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Witcher" Height="430" Width="300">
+    <Grid Background="Orange">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="172*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="25" FontFamily="Algerian" Width="104">Witcher</TextBlock>
+        <ListBox Grid.Row="1" Background="Gray" FontFamily="Matura MT Script Capitals" ItemsSource="{Binding Collection}" Margin="0,17,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightYellow" FontSize="15"  Text="{Binding Title}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
