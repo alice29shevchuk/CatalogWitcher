@@ -8,7 +8,7 @@ namespace CatalogWitcher.Model
     public partial class ModelContext : DbContext
     {
         public ModelContext()
-            : base("name=ModelContext")
+            : base("name=ModelContext2")
         {
         }
 

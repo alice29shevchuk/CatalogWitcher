@@ -18,14 +18,14 @@ namespace CatalogWitcher.ViewModel
 
         private ObservableCollection<Character> character;
 
-        public ObservableCollection<Character> Character
+        public ObservableCollection<Character> Characters
         {
             get { return character; }
             set { character = value; }
         }
         public ListCharactersViewModel()
         {
-            Character = new ObservableCollection<Character>(new ModelContext().Characters);
+            Characters = new ObservableCollection<Character>(new ModelContext().Characters);
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

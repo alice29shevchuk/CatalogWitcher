@@ -7,10 +7,18 @@
         mc:Ignorable="d"
         xmlns:myCtrls="clr-namespace:CatalogWitcher.Model.CustomControls"
         Title="ListCharacters" Height="400" Width="300">
+    <Window.Resources>
+        <DataTemplate x:Key="cardTemplate">
+            <myCtrls:CharacterControl></myCtrls:CharacterControl>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="cardPanelTemplate">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
     <Grid>
-        <ListView>
-            <myCtrls:CharacterControl/>
-        </ListView>
-
+        <ListBox ItemsSource="{Binding Characters}"
+            ItemTemplate="{StaticResource cardTemplate}"
+            ItemsPanel="{StaticResource cardPanelTemplate}">
+        </ListBox>
     </Grid>
 </Window>

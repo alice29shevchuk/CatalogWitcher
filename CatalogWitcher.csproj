@@ -83,13 +83,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converter\ConverterURI.cs" />
     <Compile Include="Model\Chapter.cs" />
     <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\ModelContext.cs" />
     <Compile Include="ViewModel\ListCharactersViewModel.cs" />
     <Compile Include="View\CustomControls\CharacterControl.xaml.cs">
       <DependentUpon>CharacterControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\ModelContext.cs" />
     <Compile Include="ViewModel\ChaptersViewModel.cs" />
     <Compile Include="View\ListCharacters.xaml.cs">
       <DependentUpon>ListCharacters.xaml</DependentUpon>
