@@ -49,9 +49,6 @@ namespace CatalogWitcher.ViewModel
         {
             if (SelectedChapter == null)
                 return;
-            //
-            // Написать конструктор ID
-            //
             ListCharacters listCharacters = new ListCharacters(SelectedChapter.Id);
             listCharacters.ShowDialog();
         }
