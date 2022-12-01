@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CatalogWitcher.View.CustomControls"
               xmlns:converter="clr-namespace:CatalogWitcher.Converter"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="600">
+             d:DesignHeight="550" d:DesignWidth="650">
     <UserControl.Resources>
         <converter:ConverterURI x:Key="ImageConvertor" />
     </UserControl.Resources>
