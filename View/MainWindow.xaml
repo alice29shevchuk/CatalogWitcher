@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatalogWitcher"
         mc:Ignorable="d"
-        Title="Witcher" Height="430" Width="300">
+        Title="Witcher" Height="470" Width="300">
     <Grid Background="Orange">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"></RowDefinition>
-            <RowDefinition Height="172*"></RowDefinition>
+            <RowDefinition Height="57*"></RowDefinition>
+            <RowDefinition Height="355*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="25" FontFamily="Algerian" Width="104">Witcher</TextBlock>
-        <ListBox Grid.Row="1" Background="Gray" FontFamily="Matura MT Script Capitals" ItemsSource="{Binding Collection}" Margin="0,17,0,0">
+        <ListBox Grid.Row="1" Background="Gray" FontFamily="Matura MT Script Capitals" ItemsSource="{Binding Collection}" SelectedItem ="{Binding SelectedChapter}" Margin="0,17,0,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightYellow" FontSize="15"  Text="{Binding Title}"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Grid.Row="2" FontSize="20" Background="Orange" BorderBrush="DarkOrange" Command="{Binding BTNrelayCommand}">Confirm</Button>
     </Grid>
 </Window>

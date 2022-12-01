@@ -24,7 +24,7 @@ namespace CatalogWitcher.Model.CustomControls
         public CharacterControl()
         {
             InitializeComponent();
-            this.DataContext = new ListCharactersViewModel();
+            //this.DataContext = new ListCharactersViewModel();
         }
     }
 }

@@ -16,6 +16,11 @@
         </ItemsPanelTemplate>
     </Window.Resources>
     <Grid>
+        <!--<StackPanel DataContext="{Binding Characters}" Margin="0,0,0,30" Grid.RowSpan="2">
+            <Image Source="{Binding Img,Converter={StaticResource ImageConvertor}}" Width="100" Grid.Row="0">
+            </Image>
+            <TextBlock Grid.Row="1" Text="{Binding Name}"></TextBlock>
+        </StackPanel>-->
         <ListBox ItemsSource="{Binding Characters}"
             ItemTemplate="{StaticResource cardTemplate}"
             ItemsPanel="{StaticResource cardPanelTemplate}">

@@ -1,4 +1,6 @@
 ﻿using CatalogWitcher.Model;
+using CatalogWitcher.View;
+using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +9,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace CatalogWitcher.ViewModel
 {
@@ -20,9 +24,31 @@ namespace CatalogWitcher.ViewModel
             get { return collection; }
             set { collection = value; }
         }
+        private Chapter _selectedChapter;
+
+        public Chapter SelectedChapter
+        {
+            get { return _selectedChapter; }
+            set { _selectedChapter = value; }
+        }
+
         public ChaptersViewModel()
         {
             Collection = new ObservableCollection<Chapter>(new ModelContext().Chapters);
+        }
+        public RelayCommand relayCommand;
+
+        public RelayCommand BTNrelayCommand
+        {
+            get { return relayCommand ?? (relayCommand = new RelayCommand(BTN)); }
+        }
+        public void BTN()
+        {
+            if (SelectedChapter == null)
+                return;
+            MessageBox.Show("Test");
+            ListCharacters listCharacters = new ListCharacters();
+            listCharacters.ShowDialog();
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")
