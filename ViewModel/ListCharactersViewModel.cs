@@ -1,4 +1,6 @@
 ﻿using CatalogWitcher.Model;
+using CatalogWitcher.View;
+using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,6 +24,28 @@ namespace CatalogWitcher.ViewModel
         {
             get { return character; }
             set { character = value; }
+        }
+
+        private Character _selectedCharacters;
+
+        public Character SelectedCharacters
+        {
+            get { return _selectedCharacters; }
+            set { _selectedCharacters = value; }
+        }
+        public RelayCommand relayCommand;
+
+        public RelayCommand BTNCommand
+        {
+            get { return relayCommand ?? (relayCommand = new RelayCommand(ShowMoreInfo)); }
+        }
+        public void ShowMoreInfo()
+        {
+            if (SelectedCharacters == null)
+                return;
+            AllInfoCharactersWindow allInfoCharactersWindow = new AllInfoCharactersWindow();
+            allInfoCharactersWindow.ShowDialog();
+
         }
         public ListCharactersViewModel()
         {

@@ -20,6 +20,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Grid.Row="2" FontSize="20" Background="Orange" BorderBrush="DarkOrange" Command="{Binding BTNrelayCommand}">Confirm</Button>
+        <Button Grid.Row="2" FontSize="22" Background="Orange" BorderBrush="DarkOrange" Command="{Binding BTNrelayCommand}" FontFamily="Algerian">Confirm</Button>
     </Grid>
 </Window>

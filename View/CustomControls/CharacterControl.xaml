@@ -6,23 +6,17 @@
              xmlns:local="clr-namespace:CatalogWitcher.Model.CustomControls" xmlns:viewmodel="clr-namespace:CatalogWitcher.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ChaptersViewModel}"
              xmlns:converter="clr-namespace:CatalogWitcher.Converter"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="150">
+             d:DesignHeight="300" d:DesignWidth="200">
     <UserControl.Resources>
         <converter:ConverterURI x:Key="ImageConvertor" />
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="169*"></RowDefinition>
             <RowDefinition Height="31*"></RowDefinition>
         </Grid.RowDefinitions>
-        <!--<StackPanel DataContext="{Binding Characters}" Margin="0,0,0,30" Grid.RowSpan="2">-->
-            <Image Source="{Binding Img,Converter={StaticResource ImageConvertor}}" Width="100" Grid.Row="0">
+        <Image Source="{Binding Img,Converter={StaticResource ImageConvertor}}" Width="190" Height="250" Grid.Row="0">
             </Image>
-            <TextBlock Grid.Row="1" Text="{Binding Name}"></TextBlock>
-        <!--</StackPanel>-->
-
-
-
-
+        <TextBlock FontSize="20" Foreground="Orange" TextAlignment="Center" Grid.Row="1" Text="{Binding Name}" FontFamily="Algerian"></TextBlock>
     </Grid>
 </UserControl>
