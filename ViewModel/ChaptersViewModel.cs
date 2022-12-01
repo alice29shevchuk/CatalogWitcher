@@ -31,7 +31,10 @@ namespace CatalogWitcher.ViewModel
             get { return _selectedChapter; }
             set { _selectedChapter = value; }
         }
-
+        public ChaptersViewModel(int id)
+        {
+           Collection = new ObservableCollection<Chapter>(new ModelContext().Chapters.Where(x=> x.Id == id));
+        }
         public ChaptersViewModel()
         {
             Collection = new ObservableCollection<Chapter>(new ModelContext().Chapters);
@@ -49,7 +52,7 @@ namespace CatalogWitcher.ViewModel
             //
             // Написать конструктор ID
             //
-            ListCharacters listCharacters = new ListCharacters();
+            ListCharacters listCharacters = new ListCharacters(SelectedChapter.Id);
             listCharacters.ShowDialog();
         }
 

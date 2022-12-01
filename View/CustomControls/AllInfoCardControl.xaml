@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CatalogWitcher.View.CustomControls.AllInfoCardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CatalogWitcher.View.CustomControls"
+              xmlns:converter="clr-namespace:CatalogWitcher.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="600">
+    <UserControl.Resources>
+        <converter:ConverterURI x:Key="ImageConvertor" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"></ColumnDefinition>
+            <ColumnDefinition Width="61*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="341*"></RowDefinition>
+            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="64*"></RowDefinition>
+            <RowDefinition Height="67*"></RowDefinition>
+            <RowDefinition Height="53*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Background="Orange" Foreground="Black" Grid.Column="0" Grid.Row="0" FontSize="15" Text="{Binding Description}" TextWrapping="Wrap" Margin="0,0,0,5"></TextBlock>
+        <Image Source="{Binding Img,Converter={StaticResource ImageConvertor}}" Height="250" Width="250" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5">
+        </Image>
+        <TextBlock Grid.Row="1" Grid.Column="1" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian">Information</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1"  Text="{Binding Name}" FontSize="20" TextAlignment="Center" Foreground="Orange" Margin="0,5,0,0"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian" Margin="0,5,0,0">Name</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Sex}" FontSize="20" TextAlignment="Center" Foreground="Orange"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian">Sex</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Race}" FontSize="20" TextAlignment="Center" Foreground="Orange"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian">Race</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Occupation}" FontSize="20" TextAlignment="Center" Foreground="Orange"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian">Occupation</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Belonging}" FontSize="20" TextAlignment="Center" Foreground="Orange"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" Background="Orange" TextAlignment="Center" FontSize="30" FontFamily="Algerian">Belonging</TextBlock>
+    </Grid>
+</UserControl>

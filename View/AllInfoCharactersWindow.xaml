@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatalogWitcher.View"
         mc:Ignorable="d"
-        Title="AllInfoCharactersWindow" Height="450" Width="400">
+         xmlns:myCtrls="clr-namespace:CatalogWitcher.View.CustomControls"
+        Title="AllInfoCharactersWindow" Height="600" Width="600">
+    <Window.Resources>
+        <DataTemplate x:Key="cardTemplate">
+            <myCtrls:AllInfoCardControl></myCtrls:AllInfoCardControl>
+        </DataTemplate>
+        <ItemsPanelTemplate x:Key="cardPanelTemplate">
+            <WrapPanel/>
+        </ItemsPanelTemplate>
+    </Window.Resources>
     <Grid>
-        
+        <ListBox Background="DimGray" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Characters}" SelectedItem ="{Binding SelectedCharacters}"
+            ItemTemplate="{StaticResource cardTemplate}"
+            ItemsPanel="{StaticResource cardPanelTemplate}">
+        </ListBox>
     </Grid>
 </Window>

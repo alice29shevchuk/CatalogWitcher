@@ -1,5 +1,4 @@
-﻿using CatalogWitcher.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,22 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CatalogWitcher
+namespace CatalogWitcher.View.CustomControls
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AllInfoCardControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AllInfoCardControl : UserControl
     {
-        public MainWindow()
+        public AllInfoCardControl()
         {
             InitializeComponent();
-            this.DataContext = new ChaptersViewModel();
-        }
-        public MainWindow(int id)
-        {
-            InitializeComponent();
-            this.DataContext = new ChaptersViewModel(id);
         }
     }
 }

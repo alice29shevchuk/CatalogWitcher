@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatalogWitcher.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace CatalogWitcher.View
         public AllInfoCharactersWindow()
         {
             InitializeComponent();
+            DataContext = new AllInfoCharactersViewModel();
+        }
+        public AllInfoCharactersWindow(string name)
+        {
+            InitializeComponent();
+            DataContext = new AllInfoCharactersViewModel(name);
         }
     }
 }

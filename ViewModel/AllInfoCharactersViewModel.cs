@@ -1,10 +1,7 @@
 ﻿using CatalogWitcher.Model;
-using CatalogWitcher.View;
-using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,11 +10,9 @@ using System.Threading.Tasks;
 
 namespace CatalogWitcher.ViewModel
 {
-    public class ListCharactersViewModel : INotifyCollectionChanged
+    public class AllInfoCharactersViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-
         private ObservableCollection<Character> character;
 
         public ObservableCollection<Character> Characters
@@ -33,27 +28,13 @@ namespace CatalogWitcher.ViewModel
             get { return _selectedCharacters; }
             set { _selectedCharacters = value; }
         }
-        public RelayCommand relayCommand;
-
-        public RelayCommand BTNCommand
+        public AllInfoCharactersViewModel(string name)
         {
-            get { return relayCommand ?? (relayCommand = new RelayCommand(ShowMoreInfo)); }
+            Characters = new ObservableCollection<Character>(new ModelContext().Characters.Where(x=>x.Name == name));
         }
-        public void ShowMoreInfo()
-        {
-            if (SelectedCharacters == null)
-                return;
-            AllInfoCharactersWindow allInfoCharactersWindow = new AllInfoCharactersWindow(SelectedCharacters.Name);
-            allInfoCharactersWindow.ShowDialog();
-
-        }
-        public ListCharactersViewModel()
+        public AllInfoCharactersViewModel()
         {
             Characters = new ObservableCollection<Character>(new ModelContext().Characters);
-        }
-        public ListCharactersViewModel(int id)
-        {
-            Characters = new ObservableCollection<Character>(new ModelContext().Characters.Where(x=> x.CharaptersId == id));
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

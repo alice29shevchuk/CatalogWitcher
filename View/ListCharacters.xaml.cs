@@ -26,5 +26,10 @@ namespace CatalogWitcher.View
             InitializeComponent();
             this.DataContext = new ListCharactersViewModel();
         }
+        public ListCharacters(int id)
+        {
+            InitializeComponent();
+            this.DataContext = new ListCharactersViewModel(id);
+        }
     }
 }

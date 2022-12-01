@@ -86,6 +86,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CustomControls\AllInfoCardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CustomControls\CharacterControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,9 +110,13 @@
     <Compile Include="Model\Chapter.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\ModelContext.cs" />
+    <Compile Include="ViewModel\AllInfoCharactersViewModel.cs" />
     <Compile Include="ViewModel\ListCharactersViewModel.cs" />
     <Compile Include="View\AllInfoCharactersWindow.xaml.cs">
       <DependentUpon>AllInfoCharactersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomControls\AllInfoCardControl.xaml.cs">
+      <DependentUpon>AllInfoCardControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CustomControls\CharacterControl.xaml.cs">
       <DependentUpon>CharacterControl.xaml</DependentUpon>
